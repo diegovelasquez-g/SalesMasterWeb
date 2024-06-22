@@ -1,0 +1,94 @@
+<div class="flex w-screen h-screen">
+  <div class="w-1/2 flex justify-center items-center bg-orange-200">
+    <img
+      src="../../../../assets/loginImage.png"
+      alt="Logo"
+      class="max-h-[450px] max-w-full"
+    />
+  </div>
+  <div class="w-1/2 flex justify-center items-center bg-white">
+    <div class="p-8 w-full max-w-xl">
+      <h1 class="text-center text-2xl font-bold mb-6">Sign In into SAM</h1>
+      <form [formGroup]="loginForm" autocomplete="off" (ngSubmit)="onSubmit()">
+        <div class="mb-4 relative">
+          <label for="email" class="sr-only">Username</label>
+          <div
+            class="flex items-center border border-gray-300 rounded-md focus-within:border-orange-500"
+          >
+            <div class="px-3 py-2">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="gray"
+                  stroke-width="2"
+                  d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              class="flex-1 py-2 px-3 border-0 rounded-r-md focus:ring-0 focus:border-none focus:outline-none w-full"
+              type="email"
+              formControlName="email"
+              placeholder="user@user.com"
+            />
+          </div>
+        </div>
+        <div class="mb-4 relative">
+          <label for="password" class="sr-only">Password</label>
+          <div
+            class="flex items-center border border-gray-300 rounded-md focus-within:border-orange-500"
+          >
+            <div class="px-3 py-2">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="gray"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14v3m-3-6V7a3 3 0 1 1 6 0v4m-8 0h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"
+                />
+              </svg>
+            </div>
+            <input
+              class="flex-1 py-2 px-3 border-0 rounded-r-md focus:ring-0 focus:border-none focus:outline-none w-full"
+              type="password"
+              formControlName="password"
+              placeholder="***************"
+            />
+          </div>
+        </div>
+        <div class="flex justify-center mb-4">
+          <button
+            type="submit"
+            class="bg-orange-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-orange-600 w-full"
+          >
+            SIGN IN
+          </button>
+        </div>
+        <div class="text-center mb-4">
+          <a href="#" class="text-orange-500 hover:underline"
+            >Forgot Password?</a
+          >
+        </div>
+        <p class="mt-10 text-center text-gray-500 text-xs">
+          *Please use the credentials provided by your administrators*
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
