@@ -1,0 +1,19 @@
+<div
+  *ngIf="showToast"
+  class="fixed top-0 right-0 mt-8 mr-3 p-6 w-full max-w-sm shadow-lg rounded-r-xl border-l-4 toast-enter"
+  [ngClass]="toastClasses"
+>
+  <div class="flex items-center">
+    <div class="flex-shrink-0 flex items-center justify-center w-12 h-12">
+      <ng-icon [name]="toastIcons" size="2rem" class="w-8 h-8"></ng-icon>
+    </div>
+    <div class="ml-3">
+      <div class="text-lg font-bold">
+        <p>{{ title }}</p>
+      </div>
+      <div class="text-sm">
+        <p>{{ message }}</p>
+      </div>
+    </div>
+  </div>
+</div>

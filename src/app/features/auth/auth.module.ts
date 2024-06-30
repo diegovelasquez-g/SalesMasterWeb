@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthLayoutPageComponent } from './pages/auth-layout-page/auth-layout-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ResetPasswordPageComponent,
     AuthLayoutPageComponent,
   ],
-  imports: [CommonModule, RouterModule, AuthRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    AuthRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class AuthModule {}

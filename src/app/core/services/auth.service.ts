@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { LoginResponse } from '../../features/auth/interfaces/loginResponse.interface';
 import { HttpClient } from '@angular/common/http';
 import { LoginRequest } from '../../features/auth/interfaces/loginRequest.interface';
@@ -24,7 +24,11 @@ export class AuthService {
         ),
         tap((response) =>
           localStorage.setItem('employeeId', response.employeeId)
-        )
+        ),
+        catchError((error) => {
+          const errorMessage = error.error?.message || 'Unknown error occurred';
+          return throwError(() => new Error(errorMessage));
+        })
       );
   }
 
@@ -37,6 +41,7 @@ export class AuthService {
       return of(false);
 
     const employeeId = localStorage.getItem('employeeId');
+    if (!employeeId) return of(false);
 
     return this.http
       .get<EmployeeInfo>(`${this.baseUrl}employeeInfo?employeeId=${employeeId}`)
