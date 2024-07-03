@@ -1,0 +1,23 @@
+<p-dialog
+  [draggable]="false"
+  [(visible)]="isVisible"
+  [modal]="true"
+  [closable]="true"
+  [style]="{ width: '52vh' }"
+  [contentStyle]="{ 'max-height': '70vh', 'overflow-y': 'auto' }"
+  (onHide)="closeModal()"
+>
+  <ng-template pTemplate="header">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-bold">{{ title$ | async }}</h2>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <div class="w-full">
+      <ng-container *ngIf="content$ | async as content">
+        <ng-container *ngComponentOutlet="content"></ng-container>
+      </ng-container>
+    </div>
+  </ng-template>
+</p-dialog>

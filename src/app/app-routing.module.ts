@@ -27,6 +27,15 @@ const routes: Routes = [
     canMatch: [canMatchAuthGuard],
   },
   {
+    path: 'categories',
+    loadChildren: () =>
+      import('./features/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+    canActivate: [canActivateAuthGuard],
+    canMatch: [canMatchAuthGuard],
+  },
+  {
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full',

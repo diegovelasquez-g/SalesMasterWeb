@@ -1,0 +1,25 @@
+<header class="w-full text-sm flex items-center justify-between">
+  <div class="flex items-center w-1/2 space-x-2">
+    <i class="pi pi-align-justify cursor-pointer text-xl md:hidden"></i>
+    <p-breadcrumb
+      [model]="items"
+      class="hidden md:block"
+      [style]="{ 'font-size': '0.80rem', 'background-color': 'transparent' }"
+    ></p-breadcrumb>
+  </div>
+
+  <div class="flex items-center justify-end w-1/2 p-2 space-x-4">
+    <i class="pi pi-moon text-lg text-orange-500"></i>
+    <i class="pi pi-cog text-lg text-orange-500"></i>
+    <div class="relative md:w-96">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="input input-bordered w-80 md:w-96 p-2 pl-10 rounded-xl border-gray-100 border-[1px] bg-[#F8F8F7] focus:outline-none focus:ring-1 focus:ring-orange-500"
+      />
+      <i
+        class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500"
+      ></i>
+    </div>
+  </div>
+</header>

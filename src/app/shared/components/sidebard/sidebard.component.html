@@ -1,38 +1,69 @@
 <div class="p-4 h-full">
-  <div class="text-2xl font-bold mb-4">Teamo</div>
-  <nav class="space-y-3 pt-10">
-    <div
-      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4 transition duration-300"
+  <div class="text-xl font-bold mb-2 mt-5">Sales & Management</div>
+  <ul class="space-y-2 pt-8">
+    <li
+      routerLink="/dashboard"
+      routerLinkActive="bg-orange-500 text-white"
+      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4"
     >
-      <ng-icon name="bootstrapPieChart" size="1.2rem"></ng-icon>
-      <p class="text-lg font-semibold">Dashboard</p>
-    </div>
-    <div
-      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4 transition duration-300"
+      <i class="pi pi-home"></i>
+      <p class="text-lg font-medium">Dashboard</p>
+    </li>
+    <li
+      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4"
       (click)="toggleProductsDropdown()"
     >
-      <ng-icon name="bootstrapBoxes" size="1.2rem"></ng-icon>
-      <p class="text-lg font-semibold">Products</p>
-      <ng-icon
+      <i class="pi pi-box"></i>
+      <p class="text-lg font-medium">Products</p>
+      <i
         *ngIf="showProductsDropdown; else downArrow"
-        name="bootstrapChevronUp"
-        size="1rem"
-        class="ml-auto"
-      ></ng-icon>
+        class="ml-auto pi pi-chevron-up"
+      ></i>
       <ng-template #downArrow>
-        <ng-icon
-          name="bootstrapChevronDown"
-          size="1rem"
-          class="ml-auto"
-        ></ng-icon>
+        <i class="ml-auto pi pi-chevron-down"></i>
       </ng-template>
-    </div>
-    <div *ngIf="showProductsDropdown" class="">
-      <div
-        class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-6 transition duration-300"
+    </li>
+    <div
+      *ngIf="showProductsDropdown"
+      [@dropdownAnimation]
+      class="overflow-hidden"
+    >
+      <li
+        routerLink="/categories"
+        routerLinkActive="bg-orange-500 text-white"
+        class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-6"
       >
-        <p class="text-lg font-semibold">Categories</p>
-      </div>
+        <i class="pi pi-tags"></i>
+        <p class="text-lg font-medium">Categories</p>
+      </li>
+      <li
+        routerLink="/providers"
+        class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-6"
+      >
+        <i class="pi pi-truck"></i>
+        <p class="text-lg font-medium">Providers</p>
+      </li>
+      <li
+        routerLink="/products"
+        class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-6"
+      >
+        <i class="pi pi-sitemap"></i>
+        <p class="text-lg font-medium">Products</p>
+      </li>
     </div>
-  </nav>
+    <li
+      routerLink="/sales"
+      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4"
+    >
+      <i class="pi pi-shopping-cart"></i>
+      <p class="text-lg font-medium">Sales</p>
+    </li>
+    <li
+      routerLink="/reports"
+      class="flex items-center gap-3 hover:bg-orange-500 hover:text-white p-2 rounded-lg cursor-pointer pl-4"
+    >
+      <i class="pi pi-chart-bar"></i>
+      <p class="text-lg font-medium">Reports</p>
+    </li>
+  </ul>
 </div>

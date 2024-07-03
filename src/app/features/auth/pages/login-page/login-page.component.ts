@@ -52,10 +52,9 @@ export class LoginPageComponent {
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
-        this.alertsService.showAlert(
+        this.alertsService.addError(
           'Something went wrong!',
-          'Please check your credentials and try again.',
-          AlertType.Error
+          'Please check your credentials and try again.'
         );
         this.isLoading = false;
       },

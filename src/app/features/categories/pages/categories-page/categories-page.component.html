@@ -1,0 +1,15 @@
+<div class="">
+  <div>
+    <h1 class="text-4xl font-medium">Categories Management</h1>
+    <button
+      type="button"
+      class="text-white bg-orange-500 hover:bg-orange-600 font-medium rounded-lg px-3 py-2 text-center inline-flex items-center gap-1"
+      (click)="openNewCategoryModal()"
+    >
+      <i class="pi pi-plus text-sm"></i>
+      <span class="text-base">Add Category</span>
+    </button>
+  </div>
+</div>
+<shared-custom-modal></shared-custom-modal>
+<shared-toast-alert></shared-toast-alert>

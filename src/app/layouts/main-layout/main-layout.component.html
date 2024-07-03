@@ -1,8 +1,11 @@
-<div class="h-screen w-screen bg-red-200 flex">
-  <aside class="w-56 bg-white">
+<div class="h-screen w-screen flex">
+  <aside class="hidden md:flex md:w-56 border-r-2 border-gray-100">
     <shared-sidebard></shared-sidebard>
   </aside>
-  <section class="flex-1 bg-blue-100">
-    <router-outlet></router-outlet>
-  </section>
+  <div class="flex-1 flex flex-col ml-4 md:ml-0 p-3">
+    <shared-menubar></shared-menubar>
+    <section class="flex-1 mt-3 p-3">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
 </div>

@@ -1,42 +1,41 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastAlertComponent } from './components/toast-alert/toast-alert.component';
-import { NgIconsModule } from '@ng-icons/core';
-import {
-  faSolidCircleCheck,
-  faSolidCircleExclamation,
-  faSolidCircleXmark,
-  faSolidHouse,
-  faSolidTriangleExclamation,
-} from '@ng-icons/font-awesome/solid';
-import { faChartBar } from '@ng-icons/font-awesome/regular';
 import { SidebardComponent } from './components/sidebard/sidebard.component';
-import {
-  bootstrapBoxSeam,
-  bootstrapBoxes,
-  bootstrapChevronDown,
-  bootstrapChevronUp,
-  bootstrapPieChart,
-} from '@ng-icons/bootstrap-icons';
+import { CustomModalComponent } from './components/custom-modal/custom-modal.component';
+import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { RouterModule } from '@angular/router';
+import { MenubarComponent } from './components/menubar/menubar.component';
+import { AvatarModule } from 'primeng/avatar';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
-  declarations: [ToastAlertComponent, SidebardComponent],
+  declarations: [
+    ToastAlertComponent,
+    SidebardComponent,
+    CustomModalComponent,
+    MenubarComponent,
+  ],
   imports: [
     CommonModule,
-    NgIconsModule.withIcons({
-      faSolidCircleCheck,
-      faSolidCircleExclamation,
-      faSolidCircleXmark,
-      faSolidTriangleExclamation,
-      faSolidHouse,
-      faChartBar,
-      bootstrapPieChart,
-      bootstrapBoxSeam,
-      bootstrapBoxes,
-      bootstrapChevronDown,
-      bootstrapChevronUp,
-    }),
+    DialogModule,
+    ToastModule,
+    ButtonModule,
+    DropdownModule,
+    RouterModule,
+    AvatarModule,
+    BreadcrumbModule,
+    SidebarModule,
   ],
-  exports: [ToastAlertComponent, SidebardComponent],
+  exports: [
+    ToastAlertComponent,
+    SidebardComponent,
+    CustomModalComponent,
+    MenubarComponent,
+  ],
 })
 export class SharedModule {}
